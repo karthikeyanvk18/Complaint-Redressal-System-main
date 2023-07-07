@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div clas="card" style="padding: 50px;padding-right: 300px; padding-left: 300px;background-color:#F0FFFF"> 
+       
+        <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="mb-2 text-center" style="text-align: center;color:red;font-style: italic;font-size: larger;">
+                {{msg}}
+            </div>
+            <input type="text" ngModel name="userName" id="userName" placeholder="Enter username"
+               style="padding: 15px;" class="form-control mb-4 ml-5 ml-5">
+            <input type="password" ngModel name="userPassword" id="userPassword" placeholder="Enter username" style="padding: 15px;"
+                class="form-control mb-4 ml-5 mr-5">
+                <div class=" ml-5 mr-5"  style="padding: 15px;background-color: #F0FFFF">
+                    <input type="submit" value="Login" class="btn btn-outline-primary form-control rounded-2 ml-10 mr-10 mb-2 " />
+                    <input type="reset" value="Reset" class="btn btn-outline-warning form-control rounded-2 ml-10 mr-10" />
+                </div>     
+        </form>
+    </div>
+    <!-- outside card -->
+    <div class="text-center">
+        <button mat-raised-button type="button" color="primary" class="mt-2 mb-5" (click)="registerUser()" >Create customer account</button>
+    </div>
+   
+</div>
+
+<!-- input type="text" name id will be to keep same as mentioned in backend class jwtRequest/(The class which responsible to take username and password for further backend processing) to make the integration automatic -->

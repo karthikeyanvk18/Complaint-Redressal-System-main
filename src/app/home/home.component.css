@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  img:hover{
+    width: 500px;
+    height: 350px;
+    border: 2px solid #FAFF00;
+    border-radius: 10px;
+    cursor: pointer;
+}

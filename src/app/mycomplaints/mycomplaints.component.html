@@ -1,0 +1,34 @@
+<div class="container mt-5 mb-2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card"style="background-color: aliceblue;">
+                <div class="card-header"><h1>Complaint Details:</h1></div>
+            </div>
+            <div class="card-body" style="background-color: aliceblue;">
+                <table class="table table-info">
+                    <tr style="text-align: center;">
+                        <th style="padding: 5px;">Heading</th>
+                        <th style="padding: 5px;">Details</th>
+                        <!-- <th style="padding: 5px;">Movie Summary</th> -->
+                        <th style="padding: 5px;">Address</th>
+                        <th style="padding: 10px;">Pincode</th>
+                        <th style="padding: 5px;">Status</th>
+                       
+                    </tr>
+    
+                    <tr  *ngFor="let c of mycomplaints" style="text-align: center;">
+                        <ng-container *ngIf="c.pincode === '110025'">
+                        <td style="padding: 8px;">{{c.heading}}</td>
+                        <td style="padding: 8px;">{{c.details}}</td>
+                        <!-- <td style="padding: 8px;">{{c.movieTicket.description}}</td> -->
+                        <td style="padding: 8px;">{{c.address}}</td>
+                        <td style="padding: 8px;">{{c.pincode}}</td>
+                        <td style="padding: 8px;">{{c.complaintStatus}}</td>
+                        </ng-container>
+                    </tr>
+                </table>
+            </div>  
+        </div> 
+    </div>
+</div> 
+

@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row >
+        <span ><img src="/assets/telecom-icon2.jpg" style="width: 80px; height: 60px; cursor: pointer;" class="img-fluid rounded-lg" routerLink=""></span>
+      <span class="ml-3"routerLink="" style="cursor: pointer;color: black;" >ABC Telecom</span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="accent" *ngIf="! isLoggedIn()" routerLink="/login">Login</button>
+      <button mat-raised-button color="warn" class="ml-2" *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+    </mat-toolbar-row>
+ 
+   
+      <mat-toolbar-row color="primary" >
+        <button mat-raised-button color="accent" *ngIf="isCustomer()" routerLink="/customerHome">Dashboard</button>
+        <button mat-raised-button color="accent" *ngIf="isCustomer()" routerLink="/complaintReg" class="ml-2">Register Complaint</button>
+        <button mat-raised-button color="accent" *ngIf="isCustomer()" routerLink="/mycomplaints" class="ml-2">Previous complaints</button>
+        <button mat-raised-button color="accent" *ngIf="isAdmin()" routerLink="/adminHome">Dashboard</button>
+        <button mat-raised-button color="accent" *ngIf="isAdmin()" routerLink="/allcomplaints" class="ml-2" >All complaints</button>
+        <button mat-raised-button color="accent" *ngIf="isAdmin()" routerLink="/userList" class="ml-2">All Users</button>
+        <button mat-raised-button color="accent" *ngIf="isManager()" routerLink="/managerHome">Dashboard</button>
+        <button mat-raised-button color="accent" *ngIf="isManager()" routerLink="/allComplaintsManager" class="ml-2" >All complaints</button>
+        <button mat-raised-button color="accent" *ngIf="isEngineer()" routerLink="/complaintEngg" class="ml-2">Assigned Complaints</button>
+      </mat-toolbar-row> 
+      </mat-toolbar>
+      

@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <div class="card p-5" style="background-color:#012169;">
+        <div class="row">
+            <div class="col-12">
+        <form #comaplaintForm="ngForm" (ngSubmit)="registerComplaint(comaplaintForm)" >
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Full Name: </mat-label>
+                <input matInput placeholder="fullname" [(ngModel)]="complaintDetails.fullname" name="fullname" style="color: whitesmoke;">
+            </mat-form-field>
+
+            <!--Enter complaint category-->
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select [formControl]="Category" multiple>
+                  <mat-select-trigger>
+                    {{category.value?.[0] || ''}}
+                    <span *ngIf="(category.value?.length || 0) > 1" class="example-additional-selection">
+                      (+{{(category.value?.length || 0) - 1}} {{category.value?.length === 2 ? 'other' : 'others'}})
+                    </span>
+                  </mat-select-trigger>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{category}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+               -->
+
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Complaint Title: </mat-label>
+                <input matInput placeholder="Complaint Title" [(ngModel)]="complaintDetails.heading" name="heading" style="color: whitesmoke;">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Complaint Details: </mat-label>
+                <textarea  type="text" matInput placeholder="Complaint Details" [(ngModel)]="complaintDetails.details" name="details" style="color: whitesmoke;"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Address: </mat-label>
+                <input  matInput placeholder="Address" [(ngModel)]="complaintDetails.address" name="address" style="color: whitesmoke;" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Pincode: </mat-label>
+                <input  matInput placeholder="Pincode" [(ngModel)]="complaintDetails.pincode" name="pincode" style="color: whitesmoke;" required>
+            </mat-form-field>
+
+            <div align="centre">
+                <button type="submit" mat-raised-button color="accent">Register Complaint</button>
+             </div>
+        </form>
+    </div>
+</div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="card-header">
+            <h1>Complaint Details:</h1>
+        </div>
+
+
+
+        <div class="card-body" style="background-color: aliceblue;">
+            <table class="table table-info">
+                <tr style="text-align: center;">
+                    <th style="padding: 5px;">ID</th>
+                    <th style="padding: 5px;">Full Name</th>
+                    <th style="padding: 5px;">Heading</th>
+                    <th style="padding: 5px;">Details</th>
+                    <!-- <th style="padding: 5px;">Director</th>
+                    <th style="padding: 5px;">Language</th> -->
+                    <th style="padding: 10px;">Address</th>
+                    <th style="padding: 5px;">Pincode</th>
+                    <th style="padding: 5px;">complaintStatus</th>
+                    <th style="padding: 5px;">Operation</th>
+                </tr>
+
+                <tr style="text-align: center;" *ngFor="let c of complaintdetails">
+                    <ng-container *ngIf="c.pincode === '110025'">
+                        <td style="padding: 5px;">{{c.complaintId}}</td>
+                        <td style="padding: 5px;">{{c.fullname}}</td>
+                        <td style="padding: 5px;">{{c.heading}}</td>
+                        <td style="padding: 5px;">{{c.details}}</td>
+                        <td style="padding: 5px;">{{c.address}}</td>
+                        <!-- <td style="padding: 5px;">{{mt.director}}</td>
+        <td style="padding: 5px;">{{mt.language}}</td> -->
+                        <td style="padding: 5px;">{{c.pincode}}</td>
+                        <td style="padding: 5px;">{{c.complaintStatus}}</td>
+                        <td style="padding: 5px;">
+                            <button mat-raised-button color="primary" class="mb-2"
+                                (click)="wip(c.complaintId)">WIP</button>
+                            <button mat-raised-button color="primary" class="mb-2"
+                                (click)="Reviewed(c.complaintId)">Reviewed</button>
+                            <button mat-raised-button color="primary" class="ml-2"
+                                (click)="Resolved(c.complaintId)">Resolved</button>
+                        </td>
+
+                    </ng-container>
+                </tr>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
